@@ -1,0 +1,25 @@
+﻿<Window x:Class="HelixPointCloudDemo.Views.CoPickViewerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:h="http://helix-toolkit.org/wpf/"
+        xmlns:hx="http://helix-toolkit.org/wpf/SharpDX"
+        xmlns:hxcore="clr-namespace:HelixToolkit.SharpDX.Core;assembly=HelixToolkit.SharpDX.Core" 
+        xmlns:controls="clr-namespace:HelixPointCloudDemo.Controls"
+        xmlns:viewmodels="clr-namespace:HelixPointCloudDemo.ViewModels" 
+        d:DataContext="{d:DesignInstance Type=viewmodels:CoPickViewerViewModel}"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="CoPickViewer" Height="900" Width="1600">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open" Command="{Binding OpenFileCommand}" />
+                <MenuItem Header="_Exit" Command="{Binding ExitCommand}" />
+            </MenuItem>
+        </Menu>
+
+        <controls:PointCloudView PointNormals="{Binding PointNormals1}" PointColors="{Binding PointColors1}" PointColor="White" PointSize="0.6" AutoCenterTargetPoint="True"/>
+    </DockPanel>
+</Window>
