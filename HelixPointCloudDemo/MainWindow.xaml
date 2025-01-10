@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HelixPointCloudDemo"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Helix Toolkit Point Cloud Demo" Height="700" Width="900">
+        Title="Helix Toolkit Point Cloud Demo" Height="992" Width="907">
     <ScrollViewer>
         <StackPanel Orientation="Vertical">
             <Button Background="Transparent" BorderThickness="0" Margin="10" Padding="0" Click="ButtonOpenCoPickViewer_Click" HorizontalContentAlignment="Stretch">
@@ -22,6 +22,14 @@
                     <StackPanel Orientation="Horizontal">
                         <Image Source="Resources/multipointcloudview.png" MaxWidth="400" Margin="10" />
                         <TextBlock Text="Multi Point Cloud Demo" VerticalAlignment="Center" Margin="10" FontSize="20" />
+                    </StackPanel>
+                </Border>
+            </Button>
+            <Button Background="Transparent" BorderThickness="0" Margin="10" Padding="0" Click="ButtonOpenDynamicPointcloudDemo_Click" HorizontalContentAlignment="Stretch">
+                <Border BorderBrush="DarkGray" BorderThickness="1" CornerRadius="5" Background="#f0f0f0" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Resources/multipointcloudview.png" MaxWidth="400" Margin="10" />
+                        <TextBlock Text="Dynamic Point Cloud Demo" VerticalAlignment="Center" Margin="10" FontSize="20" />
                     </StackPanel>
                 </Border>
             </Button>

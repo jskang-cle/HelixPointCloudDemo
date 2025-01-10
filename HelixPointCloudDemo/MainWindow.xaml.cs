@@ -32,4 +32,9 @@ public partial class MainWindow : Window
     {
         new MultiPointCloudDemo().ShowDialog();
     }
+
+    private void ButtonOpenDynamicPointcloudDemo_Click(object sender, RoutedEventArgs e)
+    {
+        new DynamicPointCloudDemo().ShowDialog();
+    }
 }
