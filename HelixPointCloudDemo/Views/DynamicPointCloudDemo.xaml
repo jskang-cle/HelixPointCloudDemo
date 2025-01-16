@@ -11,7 +11,11 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
         Title="DynamicPointCloudDemo" Height="800" Width="1000">
-    <Grid>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Right">
+            <CheckBox Content="Show Group 1" IsChecked="{Binding ShowGroup1}" Margin="5" />
+            <CheckBox Content="Show Group 2" IsChecked="{Binding ShowGroup2}" Margin="5" />
+        </StackPanel>
         <hx:Viewport3DX 
             x:Name="ViewPort"
             ShowCoordinateSystem="True" 
@@ -44,9 +48,9 @@
                 </hx:PerspectiveCamera>
             </hx:Viewport3DX.DefaultCamera>
 
-            <hx:Element3DPresenter x:Name="SceneNodeGroupElement" Content="{Binding GroupModel}">
-                
-            </hx:Element3DPresenter>
+            <hx:Element3DPresenter 
+                x:Name="SceneNodeGroupElement" 
+                Content="{Binding GroupModel}"/>
         </hx:Viewport3DX>
-    </Grid>
+    </DockPanel>
 </Window>

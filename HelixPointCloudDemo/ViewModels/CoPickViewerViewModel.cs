@@ -31,7 +31,7 @@ public partial class CoPickViewerViewModel : ObservableObject
         var dialog = new Microsoft.Win32.OpenFileDialog
         {
             InitialDirectory = assetsPath,
-            Filter = ModelLoaderManager.GetFileFilter()
+            Filter = ModelLoaderManager.GetFileFilter(true)
         };
 
         if (dialog.ShowDialog() == true)

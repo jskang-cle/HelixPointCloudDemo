@@ -19,9 +19,16 @@ public class ModelLoaderManager
         ];
     }
 
-    public static string GetFileFilter()
+    public static string GetFileFilter(bool includeAllFilter)
     {
         var sb = new StringBuilder();
+        
+        if (includeAllFilter)
+        {
+            string allFilter = string.Join("; ", Loaders.Select(x => $"*{x.SupportedExtension}"));
+            sb.Append($"All supported files ({allFilter})|{allFilter}|");
+        }
+
         foreach (var loader in Loaders)
         {
             sb.Append(loader.Name);

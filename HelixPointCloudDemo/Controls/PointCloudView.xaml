@@ -4,13 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HelixPointCloudDemo.Controls" 
+             xmlns:mx="clr-namespace:HelixPointCloudDemo.Markup"
              xmlns:hx="http://helix-toolkit.org/wpf/SharpDX" 
              xmlns:hxcore="clr-namespace:HelixToolkit.SharpDX.Core;assembly=HelixToolkit.SharpDX.Core" 
-             xmlns:converters="clr-namespace:HelixPointCloudDemo.Converters"
+             xmlns:converters="clr-namespace:HelixPointCloudDemo.Converters" 
+             xmlns:sharpdx="clr-namespace:SharpDX;assembly=SharpDX.Mathematics" 
+             xmlns:hxutil="clr-namespace:HelixToolkit.Wpf.SharpDX.Utilities;assembly=HelixToolkit.SharpDX.Core.Wpf"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <hxutil:Vector3Converter x:Key="Vec3Conv"/>
+    </UserControl.Resources>
+    
     <hx:Viewport3DX x:Name="HelixViewPort"
                     CameraMode="Inspect"
+                    CameraRotationMode="Turntable"
                     BackgroundColor="Black"
                     ShowCoordinateSystem="True"
                     ShowCameraInfo="True"
@@ -50,5 +58,14 @@
                 <hxcore:PointGeometry3D x:Name="PointGeometry" />
             </hx:PointGeometryModel3D.Geometry>
         </hx:PointGeometryModel3D>
+        <hx:BillboardTextModel3D>
+            <hx:BillboardTextModel3D.Geometry>
+                <hxcore:BillboardText3D>
+                    <hxcore:BillboardText3D.TextInfo>
+                        <hxcore:TextInfo Text="Target" Origin="{mx:Vec3 X=0, Y=0, Z=-1407}"/>
+                    </hxcore:BillboardText3D.TextInfo>
+                </hxcore:BillboardText3D>
+            </hx:BillboardTextModel3D.Geometry>
+        </hx:BillboardTextModel3D>
     </hx:Viewport3DX>
 </UserControl>
